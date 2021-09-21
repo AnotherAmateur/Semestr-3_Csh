@@ -1,0 +1,36 @@
+
+/*Написать программу, которая определяет: 
+    3) оканчивается ли данное целое число цифрой A*/
+
+using System;
+
+namespace _main
+{
+    class Program
+    {
+
+        static void Except()
+        {
+            Console.WriteLine("Wrong data");
+            Environment.Exit(-1);
+        }
+
+        static void Main()
+        {
+            int A;
+            int digit;
+
+            Console.Write("digit = ");
+            if(!int.TryParse(Console.ReadLine(), out digit))
+               Except();
+
+            Console.Write("A = ");
+            if (!int.TryParse(Console.ReadLine(), out A))
+                Except();
+
+            Console.WriteLine("-------------");
+            Console.WriteLine((digit % 10 == A) ? "true" : "false");
+
+        }
+    }
+}
